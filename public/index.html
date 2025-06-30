@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="file" id="fileInput">
+    <button onclick="upload()">Subir</button>
+
+    <script>
+    function upload() {
+        const fileInput = document.getElementById('fileInput');
+        const formData = new FormData();
+        formData.append('file', fileInput.files[0]);
+
+        fetch('http://localhost:3000/api/files/product', {
+        method: 'POST',
+        body: formData
+        }).then(res => res.json()).then(console.log);
+    }
+    </script>    
+</body>
+</html>
+
