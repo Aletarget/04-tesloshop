@@ -7,7 +7,7 @@ export class Product {
     id: string;
 
     @Column('varchar', {
-        unique:true,
+        // unique:true,
         length:100,
     })
     title: string;
@@ -25,7 +25,7 @@ export class Product {
     decription: string;
 
     @Column('text',{
-        unique:true,
+        // unique:true,
     })
     slug: string;
 
